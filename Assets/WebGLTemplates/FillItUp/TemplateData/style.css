@@ -1,0 +1,21 @@
+/* Fill It Up! web page: the game fills the whole browser window (or LMS iframe) at any size or orientation.
+   The game adapts its own UI and camera to the aspect ratio. */
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #d9f4ff; }
+body { position: fixed; top: 0; right: 0; bottom: 0; left: 0; touch-action: none; -webkit-user-select: none; user-select: none;
+       -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
+#unity-container { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+#unity-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; outline: none;
+                background: #d9f4ff; touch-action: none; }
+#unity-warning, #unity-footer { display: none; }
+
+#unity-loading-bar { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column;
+                     align-items: center; justify-content: center; gap: 3vmin; background: linear-gradient(#5ec8ff, #d9f4ff);
+                     font-family: "Trebuchet MS", Arial, sans-serif; color: #1e3a5f; transition: opacity 0.4s; z-index: 2; }
+#unity-loading-bar.done { opacity: 0; pointer-events: none; }
+#unity-loading-title { margin: 0; font-size: clamp(28px, 8vmin, 72px); color: #fff; text-shadow: 0 0.6vmin 0 #1c76c2; letter-spacing: 0.05em; }
+#unity-drop { width: 16vmin; height: 22vmin; max-width: 140px; max-height: 190px; }
+#unity-drop svg { width: 100%; height: 100%; }
+#unity-progress-bar-empty { width: min(60vw, 420px); height: 22px; border-radius: 11px; background: rgba(255, 255, 255, 0.7);
+                            overflow: hidden; box-shadow: inset 0 0 0 4px #1c76c2; }
+#unity-progress-bar-full { width: 0%; height: 100%; background: #3fb6ff; border-radius: 11px; transition: width 0.2s; }
+#unity-loading-message { font-size: clamp(14px, 3vmin, 22px); font-weight: bold; }
